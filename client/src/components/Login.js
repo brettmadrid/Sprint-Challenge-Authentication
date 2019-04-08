@@ -5,7 +5,7 @@ class Login extends React.Component {
   render() {
     return (
       <>
-        <h4>Login</h4>
+        <h4>Sign In</h4>
       </>
     );
   }
