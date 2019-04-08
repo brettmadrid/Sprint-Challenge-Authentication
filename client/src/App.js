@@ -5,21 +5,16 @@ import "./App.css";
 import Login from "./components/Login";
 import Jokes from "./components/Jokes";
 import Register from './components/Registration';
-//import Navigation from './components/Navigation';
+import Navigation from './components/Navigation';
 import Logout from './components/Logout';
 
 class App extends Component {
-
-  logout = () => {
-    localStorage.removeItem('jwt');
-    this.props.history.push('/login');
-  }
 
   render() {
     return (
       <>
         <header>
-          {/* <Navigation /> */}
+        <Navigation />
         </header>
         <main>
           <Route path="/register" component={Register} />
