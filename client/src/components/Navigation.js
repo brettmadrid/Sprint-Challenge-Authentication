@@ -39,6 +39,9 @@ export default class Navigation extends React.Component {
                 <NavLink href="/Login/" onClick={this.toggle}>Sign In</NavLink>
               </NavItem>
               <NavItem>
+                <NavLink href="/Jokes/" onClick={this.toggle}>Jokes</NavLink>
+              </NavItem>
+              <NavItem>
                 <NavLink href="/Logout/">Logout</NavLink>
               </NavItem>
             </Nav>
