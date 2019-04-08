@@ -12,4 +12,8 @@ server.use(express.json());
 
 configureRoutes(server);
 
+server.get('/', (req, res) => {
+  res.send("I am Son of Hal ... I am always watching");
+})
+
 module.exports = server;
