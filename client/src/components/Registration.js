@@ -20,7 +20,6 @@ class Register extends React.Component {
     axios
       .post(endpoint, this.state)
       .then(res => {
-        //localStorage.setItem("jwt", res.data.token);
         this.props.history.push("/login");
       })
       .catch(e => {
@@ -67,4 +66,3 @@ class Register extends React.Component {
 }
 
 export default Register;
-
