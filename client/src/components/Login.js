@@ -1,11 +1,11 @@
 import React from "react";
 import axios from "axios";
-import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import { Button, Form, FormGroup, Label, Input, Spinner } from "reactstrap";
 
 class Login extends React.Component {
   state = {
     username: "",
-    password: ""
+    password: "",
   };
 
   handleInputChange = event => {
@@ -15,10 +15,16 @@ class Login extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    const { username, password } = this.state;
+    const userInfo = {
+      username: username,
+      password: password
+    }
     const endpoint = "http://localhost:9000/api/login";
 
+
     axios
-      .post(endpoint, this.state)
+      .post(endpoint, userInfo)
       .then(res => {
         // store token on localStorage
         localStorage.setItem("jwt", res.data.token);
@@ -30,6 +36,11 @@ class Login extends React.Component {
   };
 
   render() {
+
+    if (this.state.isLoading) {
+      return <div><Spinner type="grow" color="primary" /></div>;
+    }
+
     return (
       <>
         <h4>Sign In</h4>
